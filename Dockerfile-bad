@@ -20,8 +20,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Hardcoded Secrets (Trivy will flag these as High/Critical)
-ENV AWS_ACCESS_KEY_ID=REMOVED
-ENV AWS_SECRET_ACCESS_KEY=v8N1S+pL9xR5qT2uW4yZ7A1B3C5D7E9F1G3H5I7J
+ENV AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+ENV AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+
 
 WORKDIR /app
 # Copy the jar from stage1
